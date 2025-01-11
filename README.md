@@ -10,7 +10,7 @@ This repository, `code-compiler`, contains two distinct projects:
 
 To run this project locally, follow these steps:
 
-###1. Clone the Repository
+### 1. Clone the Repository
    ```bash
    git clone <repository-url>
    cd code-compiler
