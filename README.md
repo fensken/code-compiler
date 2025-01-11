@@ -38,8 +38,9 @@ Open [http://localhost:3000](http://localhost:3000) in your browser:
 - The **Code Compiler** is accessible via the root route (`/`).
 - The **UI for Courses** can be found under the `/courses` route.
 
-## Animations regarding courses.
-I am not an expert in animations, but based on my findings, I have implemented some animations to enhance the user experience. These animations do not cover all the designs found in the Figma file.
+## Disclaimers regarding courses page.
+- I am not an expert in animations, but based on my findings, I have implemented some animations to enhance the user experience. These animations do not cover all the designs found in the Figma file.
+- It is also essential to know that the courses page is not responsive.
 
 
 
