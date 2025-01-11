@@ -45,6 +45,10 @@ export function CodeInput({
             roundedSelection: false,
             scrollBeyondLastLine: false,
             readOnly: isRunning,
+            readOnlyMessage: {
+              value:
+                "The editor is in read-only mode. Stop the process to edit again.",
+            },
             automaticLayout: true,
           }}
         />

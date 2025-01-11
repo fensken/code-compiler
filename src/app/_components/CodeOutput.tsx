@@ -42,6 +42,9 @@ export function CodeOutput({
             fontSize: 14,
             lineNumbers: "off",
             readOnly: true,
+            readOnlyMessage: {
+              value: "This component is read-only.",
+            },
             automaticLayout: true,
             wordWrap: "on",
             scrollBeyondLastLine: false,

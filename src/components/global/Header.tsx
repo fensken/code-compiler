@@ -18,6 +18,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Link from "next/link";
 
 type HeaderProps = {
   language: Language;
@@ -80,6 +81,12 @@ export function Header({
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
+          <Link href={"/courses"}>
+            <Button variant={"link"} className="text-white">
+              Courses
+            </Button>
+          </Link>
+
           <Select value={language} onValueChange={onLanguageChange}>
             <SelectTrigger className="w-[150px] border-gray-700 bg-transparent text-white">
               <SelectValue placeholder="Select language" />
