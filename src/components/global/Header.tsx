@@ -43,21 +43,35 @@ export function Header({
   onStop,
 }: HeaderProps) {
   return (
-    <header className="flex-none border-b border-gray-700 bg-[#1e2530] px-4 py-2">
+    <header className="flex-none border-b border-gray-700 bg-[#1e2530] px-4 py-3">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
-          <Image width={20} height={20} src={"/logo.svg"} alt="Logo" />
-          <span className="text-lg font-semibold">Code Compiler</span>
+        <div className="flex items-start gap-2">
+          <Image width={24} height={24} src={"/logo.svg"} alt="Logo" />
+          <div className="flex flex-col">
+            <span className="text-lg font-semibold leading-none">
+              Code Compiler
+            </span>
+
+            <a
+              href="https://github.com/fensken"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-gray-400 hover:text-gray-200"
+            >
+              @fensken
+            </a>
+          </div>
 
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
                 <div
-                  className={`h-3 w-3 rounded-full ${
+                  className={`h-3 w-3 my-1 rounded-full ${
                     isConnected ? "bg-green-500" : "bg-red-500"
                   }`}
                 />
               </TooltipTrigger>
+
               <TooltipContent>
                 {isConnected ? "Connected" : "Disconnected"}
               </TooltipContent>
@@ -70,12 +84,12 @@ export function Header({
             <SelectTrigger className="w-[150px] border-gray-700 bg-transparent text-white">
               <SelectValue placeholder="Select language" />
             </SelectTrigger>
+
             <SelectContent className="bg-[#1e2530] border-gray-700 hover:bg-[#1e2530] text-white">
               {Object.entries(LANGUAGES).map(([key, value]) => (
                 <SelectItem key={key} value={key} className="cursor-pointer">
                   <div className="flex items-center gap-1">
                     {value.logo && createElement(value.logo)}
-
                     {value.name}
                   </div>
                 </SelectItem>
@@ -87,6 +101,7 @@ export function Header({
             <SelectTrigger className="w-[120px] border-gray-700 bg-transparent text-white">
               <SelectValue placeholder="Select theme" />
             </SelectTrigger>
+
             <SelectContent className="bg-[#1e2530] border-gray-700 hover:bg-[#1e2530] text-white">
               {EDITOR_THEMES.map((editorTheme) => (
                 <SelectItem
@@ -109,6 +124,7 @@ export function Header({
             <Play className="h-4 w-4" />
             Run
           </Button>
+
           <Button
             variant="default"
             className="gap-2 bg-red-700 hover:bg-red-600"

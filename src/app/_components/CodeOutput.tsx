@@ -1,5 +1,6 @@
 import Editor from "@monaco-editor/react";
 import { editor } from "monaco-editor";
+
 import { Button } from "@/components/ui/button";
 
 type CodeOutputProps = {
@@ -28,6 +29,7 @@ export function CodeOutput({
           CLEAR
         </Button>
       </div>
+
       <div className="flex-1 min-h-0">
         <Editor
           height="100%"
