@@ -8,7 +8,6 @@ type CodeInputProps = {
   language: Language;
   theme: string;
   code: string;
-  isRunning: boolean;
   onCodeChange: (value: string | undefined) => void;
   onEditorDidMount: (
     editor: editor.IStandaloneCodeEditor,
@@ -20,7 +19,6 @@ export function CodeInput({
   language,
   theme,
   code,
-  isRunning,
   onCodeChange,
   onEditorDidMount,
 }: CodeInputProps) {
@@ -44,7 +42,6 @@ export function CodeInput({
             lineNumbers: "on",
             roundedSelection: false,
             scrollBeyondLastLine: false,
-            readOnly: isRunning,
             readOnlyMessage: {
               value:
                 "The editor is in read-only mode. Stop the process to edit again.",

@@ -101,7 +101,6 @@ export default function CodeEditor() {
           language={language}
           theme={theme}
           code={code}
-          isRunning={isRunning}
           onCodeChange={(value) => setCode(value || "")}
           onEditorDidMount={handleEditorDidMount}
         />

@@ -1,9 +1,10 @@
 "use client";
 
 import { FC, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -36,7 +37,7 @@ const CourseCard: FC<CourseCardProps> = ({
   previousOpenCard,
 }) => {
   const getAnimationProps = () => {
-    if (previousOpenCard === null) return { x: 100 };
+    if (previousOpenCard === null) return { x: -100 };
     return {
       x: previousOpenCard < index ? -100 : 100,
     };
@@ -167,6 +168,13 @@ const CoursePage: FC = () => {
 
   return (
     <div className="container courses-page mx-auto px-16 flex items-center justify-center min-h-screen">
+      <Link href={"/"}>
+        <Button variant={"link"} className="absolute top-4 left-4">
+          <ArrowLeft />
+          Back
+        </Button>
+      </Link>
+
       <div>
         <div className="mb-12 flex flex-col gap-5">
           <h1 className="text-2xl text-[#414141]">
