@@ -1,3 +1,9 @@
+import { createElement } from "react";
+import Image from "next/image";
+import { Play, Square } from "lucide-react";
+
+import { LANGUAGES, EDITOR_THEMES, Language } from "@/constants/editor";
+
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -12,8 +18,6 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { Play, Square } from "lucide-react";
-import { LANGUAGES, EDITOR_THEMES, Language } from "@/constants/editor";
 
 type HeaderProps = {
   language: Language;
@@ -42,13 +46,14 @@ export function Header({
     <header className="flex-none border-b border-gray-700 bg-[#1e2530] px-4 py-2">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-full bg-purple-600"></div>
+          <Image width={20} height={20} src={"/logo.svg"} alt="Logo" />
           <span className="text-lg font-semibold">Code Compiler</span>
+
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
                 <div
-                  className={`h-2 w-2 rounded-full ${
+                  className={`h-3 w-3 rounded-full ${
                     isConnected ? "bg-green-500" : "bg-red-500"
                   }`}
                 />
@@ -65,11 +70,12 @@ export function Header({
             <SelectTrigger className="w-[150px] border-gray-700 bg-transparent text-white">
               <SelectValue placeholder="Select language" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-[#1e2530] border-gray-700 hover:bg-[#1e2530] text-white">
               {Object.entries(LANGUAGES).map(([key, value]) => (
-                <SelectItem key={key} value={key}>
-                  <div className="flex items-center gap-2">
-                    <div className={`h-3 w-3 rounded-full ${value.color}`} />
+                <SelectItem key={key} value={key} className="cursor-pointer">
+                  <div className="flex items-center gap-1">
+                    {value.logo && createElement(value.logo)}
+
                     {value.name}
                   </div>
                 </SelectItem>
@@ -81,9 +87,13 @@ export function Header({
             <SelectTrigger className="w-[120px] border-gray-700 bg-transparent text-white">
               <SelectValue placeholder="Select theme" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="bg-[#1e2530] border-gray-700 hover:bg-[#1e2530] text-white">
               {EDITOR_THEMES.map((editorTheme) => (
-                <SelectItem key={editorTheme.id} value={editorTheme.id}>
+                <SelectItem
+                  key={editorTheme.id}
+                  value={editorTheme.id}
+                  className="cursor-pointer"
+                >
                   {editorTheme.name}
                 </SelectItem>
               ))}

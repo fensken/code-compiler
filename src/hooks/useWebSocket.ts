@@ -1,6 +1,8 @@
+"use client";
+
 import { useState, useEffect, useRef } from "react";
 
-const WS_URL = process.env.WS_URL!;
+const WS_URL = process.env.NEXT_PUBLIC_WS_URL!;
 
 export function useWebSocket() {
   const [isConnected, setIsConnected] = useState(false);

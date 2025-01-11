@@ -22,7 +22,7 @@ export function CodeOutput({
         <Button
           variant="ghost"
           size="sm"
-          className="text-blue-400 font-medium"
+          className="font-bold text-blue-600 hover:text-blue-600"
           onClick={onClear}
         >
           CLEAR
@@ -32,6 +32,7 @@ export function CodeOutput({
         <Editor
           height="100%"
           defaultLanguage="plaintext"
+          defaultValue="Your output appears here..."
           theme={theme}
           value={output}
           options={{

@@ -72,7 +72,7 @@ export default function CodeEditor() {
   };
 
   const handleClear = () => {
-    setOutput("");
+    setOutput("Your output appears here...");
   };
 
   useEffect(() => {
