@@ -175,7 +175,9 @@ const CoursePage: FC = () => {
 
           <h2 className="text-[32px] font-bold">
             Dive Into&nbsp;
-            <span className="text-[#1da077]">What's Hot Right Now! 🔥</span>
+            <span className="text-[#1da077]">
+              What&apos;s Hot Right Now! 🔥
+            </span>
           </h2>
         </div>
 
